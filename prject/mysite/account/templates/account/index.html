@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>SIGNUP</title>
+</head>
+<body>
+<h1>SIGNUP!!!</h1>
+<form class="site-form" action="/account/signup/" method="post">
+    {{form}}
+   <!-- Firstname <input type="text" name="first_name" >
+    <br>
+    Lastname <input type="text" name="last_name">
+    <br>
+    Username <input type="text" name="username">
+    <br>
+    Password <input type="password" name="password1">
+    <br>
+    Confirm password <input type="password" name="password2">
+    <br>
+    Email <input type="email" name="email" >
+    <br>
+    Mobile <input type="number" name="mobile">
+    <br>
+    Gender <br>
+    <input type="radio" name="gender" value="male" checked> Male<br>
+    <input type="radio" name="gender" value="female" > Female<br>
+    <input type="radio" name="gender" value="others"> Others <br> -->
+
+
+
+
+    {% csrf_token %}
+    <input type="submit" name="submit" value="SIGNUP">
+</form>
+
+
+
+
+</body>
+</html>

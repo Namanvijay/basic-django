@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>app</title>
+    {% load static from staticfiles %}
+   <link rel="stylesheet" href="{% static 'style.css'%}">     
+</head>
+<body>
+<h1> Albums</h1>
+<div class="albums">
+    {% for album in albums %}
+       <div class="album">
+
+
+           <p>
+           <b>ARTIST:</b>    {{album.artist}}
+           </p>
+           <br>
+           <p>
+            <b>USER:</b>   {{album.author}}
+           </p>
+           <br>
+
+
+
+           <p>
+       <b>GENRE:</b>     {{album.genre}}
+           </p>
+           <br>
+
+            <p>
+
+       <b>ALBUM NAME:</b>     {{album.album_name}}
+           </p>
+           <br>
+           <p>
+
+         <b>DATE OF CREATION:</b>   {{album.date}}
+           </p>
+
+
+         </div>
+    {% endfor %}
+
+
+</div>
+{%if user.is_authenticated%}
+<div class="logout">
+    <form class="logout-site" action="{%url 'account:logout'%}" method="post">
+        {%csrf_token%}
+        <input type="submit" value="logout">
+    </form>
+
+    <form class="site-account" action="{%url 'firstapp:create'%}" method="get">
+        <input type="submit" value="Add album">
+
+
+
+
+
+    </form>
+    </div>
+  {%else%}
+    <form method="get" action="{%url 'account:login'%}">
+    <input type="submit" name="submit" value="Login">
+          </form>
+<form method="get" action="{%url 'account:signup'%}">
+      <input type="submit" name="submit" value="Signup">
+</form>
+
+
+
+
+{%endif%}
+
+
+
+
+
+
+
+
+</body>
+</html>

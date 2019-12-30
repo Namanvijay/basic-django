@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Create</title>
+</head>
+<body>
+<h1>
+    ADD ALBUM!!!
+</h1>
+
+    <form class="site-create" action="{%url 'firstapp:create'%}" method="post">
+
+        {{form}}
+        {%csrf_token %}
+        <input type="submit" name="submit" value="create">
+
+
+    </form>
+
+
+</body>
+</html>
